@@ -1,0 +1,35 @@
+[
+    {
+        "id": "1",
+        "title": "Visionary VR Game",
+        "description": "An innovative virtual reality game experience set in a dystopian future.",
+        "technologies": ["Unity", "C#", "Oculus"],
+        "githubLink": "https://github.com/username/visionary-vr",
+        "imageLink": "https://example.com/images/visionary-vr.jpg",
+        "uploadDate": "2023-01-15T00:00:00.000Z",
+        "releaseDate": "2023-12-10T00:00:00.000Z",
+        "lastUpdateDate": "2024-03-15T00:00:00.000Z"
+    },
+    {
+        "id": "2",
+        "title": "Enterprise Data Dashboard",
+        "description": "A dashboard for visualizing enterprise data using interactive charts and graphs.",
+        "technologies": ["React", "D3.js", "Node.js"],
+        "githubLink": "https://github.com/username/data-dashboard",
+        "imageLink": "https://example.com/images/data-dashboard.jpg",
+        "uploadDate": "2022-07-23T00:00:00.000Z",
+        "releaseDate": "2022-11-30T00:00:00.000Z",
+        "lastUpdateDate": "2024-02-20T00:00:00.000Z"
+    },
+    {
+        "id": "3",
+        "title": "Eco-Friendly E-commerce Site",
+        "description": "An e-commerce platform dedicated to eco-friendly products and sustainable practices.",
+        "technologies": ["Vue.js", "Firebase", "Stripe API"],
+        "githubLink": "https://github.com/username/eco-ecommerce",
+        "imageLink": "https://example.com/images/eco-ecommerce.jpg",
+        "uploadDate": "2023-03-10T00:00:00.000Z",
+        "releaseDate": "2023-09-22T00:00:00.000Z",
+        "lastUpdateDate": "2024-03-18T00:00:00.000Z"
+    }
+]

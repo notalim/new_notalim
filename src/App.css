@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'MonaspaceKrypton';
+  src: url('/fonts/MonaspaceKrypton-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MonaspaceKrypton';
+  src: url('/fonts/MonaspaceKrypton-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MonaspaceKrypton';
+  src: url('/fonts/MonaspaceKrypton-ExtraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+*, body {
+  font-family: 'MonaspaceKrypton', monospace;
+}
+
+.text-xxs {
+  font-size: 0.65rem; /* or whatever size you prefer */
+}
