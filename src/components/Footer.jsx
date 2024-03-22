@@ -14,7 +14,6 @@ const Footer = () => {
                 <p className="text-gray-500 text-xxs mt-2">
                     Inspired by{" "}
                     <a
-                        href="https://index.year0001.com"
                         className="hover:text-gray-800"
                         target="_blank"
                         rel="noopener noreferrer"
