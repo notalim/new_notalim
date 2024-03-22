@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ChangelogItem from "./ChangelogItem";
 
-const ChangelogComponent = () => {
+const ChangelogComponent = ({ id }) => {
     const [changelogs, setChangelogs] = useState([]);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const ChangelogComponent = () => {
     }, []);
 
     return (
-        <div className="container mx-auto mt-10">
+        <div id={id} className="container mx-auto mt-10 changelog-container">
             <h2 className="text-xs uppercase font-thin py-2 border-b text-white bg-black">
                 Changelog
             </h2>

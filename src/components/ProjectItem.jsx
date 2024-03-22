@@ -9,9 +9,21 @@ const ProjectItem = ({ project }) => {
     return (
         <div className="flex flex-col md:flex-row justify-between h-24">
             <div className="md:flex-1">
-                <h3 className="text-md uppercase font-thin">{project.title}</h3>
+                <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <h3 className="text-md uppercase font-thin cursor-pointer">
+                        {project.title}
+                    </h3>
+                </a>
                 <p className="text-xs text-gray-400 uppercase tracking-wider font-thin">
-                    Updated {getUpdatedDaysAgo(project.lastUpdateDate)} days ago
+                    {getUpdatedDaysAgo(project.lastUpdateDate) === 0
+                        ? "Updated Today"
+                        : `Updated ${getUpdatedDaysAgo(
+                              project.lastUpdateDate
+                          )} days ago`}
                 </p>
             </div>
         </div>

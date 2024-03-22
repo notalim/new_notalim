@@ -1,8 +1,27 @@
-# React + Vite
+# Notalim Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio, showcasing a collection of my projects and technical skills.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Projects**: A diverse range of projects including web applications and programming scripts.
+- **Technologies**: Utilizes modern web technologies like React, Node.js, Express, and MongoDB.
+- **Interactive UI**: Clean and user-friendly interface with interactive features.
+
+## Setup
+
+To run this portfolio locally:
+
+1. Clone the repository.
+2. Install dependencies: `npm install`.
+3. Start the server: `npm start`.
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome. Feel free to check [issues page](link-to-issues).
+
+
+## Contact
+
+- GitHub: [@notalim](https://github.com/notalim)
+- LinkedIn: [@notalim](https://linkedin.com/in/notalim)

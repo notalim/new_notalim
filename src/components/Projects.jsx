@@ -16,8 +16,12 @@ const ProjectsComponent = () => {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
-
-                setProjects(data);
+                const sortedData = data.sort((a, b) => {
+                    return (
+                        new Date(b.lastUpdateDate) - new Date(a.lastUpdateDate)
+                    );
+                });
+                setProjects(sortedData);
             } catch (error) {
                 console.error("Fetch error: ", error.message);
             }
@@ -33,7 +37,8 @@ const ProjectsComponent = () => {
                     <h2 className="text-xs uppercase mb-4 pb-2 font-thin">
                         Projects
                     </h2>
-                    {projects.map((project, index) => (
+
+                    {projects.sort().map((project, index) => (
                         <ProjectItem key={index} project={project} />
                     ))}
                 </div>
