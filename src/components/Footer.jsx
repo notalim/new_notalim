@@ -10,6 +10,7 @@ const Footer = () => {
                 >
                     Visit my GitHub
                 </a>
+
                 <p className="text-gray-500 text-xxs mt-2">
                     Inspired by{" "}
                     <a
@@ -21,6 +22,7 @@ const Footer = () => {
                         index.year0001.com
                     </a>
                 </p>
+                <p className="text-gray-500 text-xxs">2024</p>
             </div>
         </div>
     );
