@@ -10,7 +10,7 @@ const ProjectDetails = ({ project }) => {
         return dateObj.toISOString().split("T")[0];
     };
     return (
-        <div className="h-24">
+        <div className="h-36">
             <div className="md:flex-1 mt-2 md:mt-0">
                 <p className="hidden md:block text-xs text-gray-600 font-thin uppercase">
                     {truncateDescription(project.description)}

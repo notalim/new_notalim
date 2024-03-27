@@ -7,7 +7,7 @@ const ProjectItem = ({ project }) => {
     };
 
     return (
-        <div className="flex flex-col md:flex-row justify-between h-24">
+        <div className="flex flex-col md:flex-row justify-between h-36">
             <div className="md:flex-1">
                 <a
                     href={project.githubLink}
