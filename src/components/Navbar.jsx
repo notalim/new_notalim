@@ -15,11 +15,11 @@ const Navbar = () => {
     return (
         <div className="sticky top-0 z-10 ">
             <nav className="flex justify-between items-center p-4 bg-black text-white border-b border-white">
-                <div className="text-md font-light">notalim</div>
+                <div className="flex items-center space-x-2">
+                    <img src="/favicon.ico" alt="notalim" className="w-6 h-6" />
+                    <div className="text-md font-light">notalim</div>
+                </div>
                 <ul className="flex space-x-4">
-                    <li className="cursor-pointer uppercase text-sm font-light">
-                        Home
-                    </li>
                     <a href="https://github.com/notalim">
                         <li className="cursor-pointer uppercase text-sm font-light">
                             Github

@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <div className="container mx-auto px-2 mt-10 mb-5">
+        <div className="container mx-auto px-2 mt-6 mb-6">
             <div className="text-center">
                 <a
                     href="https://github.com/notalim"
@@ -11,7 +11,7 @@ const Footer = () => {
                     Visit my GitHub
                 </a>
 
-                <p className="text-gray-500 text-xxs mt-2">
+                <p className="text-gray-500 text-xxs">
                     Inspired by{" "}
                     <a
                         className="hover:text-gray-800"

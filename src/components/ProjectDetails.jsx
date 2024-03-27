@@ -12,28 +12,26 @@ const ProjectDetails = ({ project }) => {
     return (
         <div className="h-24">
             <div className="md:flex-1 mt-2 md:mt-0">
-                <p className="text-xs text-gray-600 font-thin uppercase">
+                <p className="hidden md:block text-xs text-gray-600 font-thin uppercase">
                     {truncateDescription(project.description)}
                 </p>
-                <div className="text-xs text-gray-400 uppercase tracking-wider font-thin">
+                <div className="text-xxs sm:text-xs text-gray-400 uppercase tracking-wider font-thin">
                     {parseDate(project.releaseDate).length == 0
-                        ? `Last updated ${parseDate(
-                              project.lastUpdateDate
-                          )}`
+                        ? `Last updated ${parseDate(project.lastUpdateDate)}`
                         : `Released ${parseDate(project.releaseDate)}`}
                 </div>
-                <div className="flex flex-wrap gap-2 mt-2">
+                <div className="flex flex-wrap gap-0.5 sm:gap-2 mt-2">
                     {project.technologies ? (
                         project.technologies.map((tech, index) => (
                             <span
                                 key={index}
-                                className="bg-black text-white text-xs uppercase font-thin "
+                                className="bg-black text-white text-xxs sm:text-xs uppercase font-thin"
                             >
                                 {tech}
                             </span>
                         ))
                     ) : (
-                        <span className="bg-black text-white text-xs uppercase font-thin ">
+                        <span className="bg-black text-white text-xxs sm:text-xs uppercase font-thin ">
                             No technologies
                         </span>
                     )}
