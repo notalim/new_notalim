@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ChangelogItem from "./ChangelogItem";
+import LoadingBar from "./LoadingBar";
 
 const ChangelogComponent = ({ id }) => {
     const [changelogs, setChangelogs] = useState([]);
@@ -29,9 +30,7 @@ const ChangelogComponent = ({ id }) => {
             </h2>
             <div className="space-y-2">
                 {changelogs.length === 0 ? (
-                    <div className="mt-4 uppercase text-xs font-thin text-gray-500">
-                        No changelogs available
-                    </div>
+                    <LoadingBar />
                 ) : (
                     changelogs.map((changelog, index) => (
                         <ChangelogItem
