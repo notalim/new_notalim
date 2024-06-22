@@ -20,7 +20,7 @@ const LoadingBar = () => {
     }, []);
 
     return (
-        <div className="flex items-center justify-center text-md uppercase font-thin text-gray-500">
+        <div className="flex items-center justify-center text-sm uppercase font-thin text-gray-500 mt-2">
             Loading{dots}
         </div>
     );
