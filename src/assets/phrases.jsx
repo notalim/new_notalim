@@ -13,6 +13,7 @@ const phrases = [
     "aot ending was good",
     "i miss the band already",
     "pixl garden 4l",
+    "now at pixl.garden"
 ];
 
 export default phrases;

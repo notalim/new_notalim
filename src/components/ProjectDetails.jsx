@@ -1,5 +1,5 @@
 const ProjectDetails = ({ project }) => {
-    const truncateDescription = (text, length = 80) => {
+    const truncateDescription = (text, length = 200) => {
         if (!text) return "";
         return text.length > length ? text.substring(0, length) + "..." : text;
     };
