@@ -23,11 +23,22 @@ const ChangelogComponent = ({ id }) => {
         fetchData();
     }, []);
 
+    const ChangelogHeader = () => (
+        <div className="flex items-center border-b border-gray-200 h-10 text-xs uppercase font-thin text-gray-500">
+            <div className="w-1/4 sm:w-2/12">Commit / PR</div>
+            <div className="w-1/4 sm:w-2/12">Project</div>
+            <div className="w-1/4 sm:w-2/12">Author(s)</div>
+            <div className="w-1/4 sm:w-2/12">Date</div>
+            <div className="hidden sm:block sm:w-4/12">Commit Message</div>
+        </div>
+    );
+
     return (
         <div id={id} className="container mx-auto mt-10 changelog-container">
             <h2 className="text-xs uppercase font-thin py-2 border-b text-white bg-black">
                 Changelog
             </h2>
+            <ChangelogHeader />
             <div className="space-y-2">
                 {changelogs.length === 0 ? (
                     <LoadingBar />

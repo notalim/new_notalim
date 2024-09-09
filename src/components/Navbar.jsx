@@ -1,6 +1,8 @@
 import React from "react";
 import Typewriter from "./Typewriter";
 import phrases from "../assets/phrases";
+import ScrollingBadges from "./ScrollingBadges";
+import badges from "../assets/badges.json";
 
 const Navbar = () => {
     const scrollToChangelog = () => {
@@ -15,11 +17,15 @@ const Navbar = () => {
     };
 
     return (
-        <div className="sticky top-0 z-10 ">
-            <nav className="flex justify-between items-center p-4 bg-black text-white border-b border-white">
+        <>
+            <nav className="sticky top-0 z-10 flex justify-between items-center p-4 bg-black text-white border-b border-white">
                 <div className="flex items-center space-x-2">
                     <img src="/favicon.ico" alt="notalim" className="w-6 h-6" />
                     <div className="text-md font-light">notalim</div>
+                </div>
+
+                <div className="flex-grow text-center">
+                    <Typewriter phrases={phrases} />
                 </div>
 
                 <ul className="flex space-x-4">
@@ -45,10 +51,10 @@ const Navbar = () => {
                     </li>
                 </ul>
             </nav>
-            <div className="bg-white flex justify-center items-center p-4 border-b border-black">
-                <Typewriter phrases={phrases} />
+            <div className="bg-white border-b border-black overflow-hidden py-2">
+                <ScrollingBadges badges={badges} />
             </div>
-        </div>
+        </>
     );
 };
 

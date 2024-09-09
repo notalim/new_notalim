@@ -40,7 +40,7 @@ const Typewriter = ({ phrases }) => {
     return (
         <p className="text-center uppercase font-thin">
             {phrases[index].substring(0, subIndex)}
-            <span className="inline-block bg-black w-[0.6em] h-[1em]"></span>
+            <span className="inline-block bg-white w-[0.6em] h-[1em]"></span>
         </p>
     );
 };
