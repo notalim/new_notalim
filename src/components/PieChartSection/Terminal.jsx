@@ -6,9 +6,26 @@ const Terminal = ({ toggleChart, isChartVisible }) => {
     const [output, setOutput] = useState([]);
     const [blink, setBlink] = useState(true);
     const [cursorPosition, setCursorPosition] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
     const { isDark, toggleTheme } = useTheme();
     const inputRef = useRef(null);
     const outputRef = useRef(null);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768); // Adjust this breakpoint as needed
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    useEffect(() => {
+        const blinkInterval = setInterval(() => {
+            setBlink(prev => !prev);
+        }, 500);
+        return () => clearInterval(blinkInterval);
+    }, []);
 
     useEffect(() => {
         const asciiArt = `
@@ -16,7 +33,7 @@ const Terminal = ({ toggleChart, isChartVisible }) => {
             | |      | (_)          
  _ __   ___ | |_ __ _| |_ _ __ ___  
 | '_ \\ / _ \\| __/ _\` | | | '_ \` _ \\ 
-| | | | (_) | || (_| | | | | | | | |
+| | | | (_) | || (_| | | | | | | |
 |_| |_|\\___/ \\__\\__,_|_|_|_| |_| |_|
                                     
                                     `;
@@ -145,6 +162,9 @@ const Terminal = ({ toggleChart, isChartVisible }) => {
                     "Brewing... Your virtual coffee is ready! ☕",
                 ]);
                 break;
+            case "hello":
+                setOutput((prev) => [...prev, "𝓗𝓮𝓵𝓵𝓸 𝓑𝓻𝓸 "]);
+                break;
             default:
                 setOutput((prev) => [
                     ...prev,
@@ -167,7 +187,10 @@ const Terminal = ({ toggleChart, isChartVisible }) => {
                     isDark ? "bg-gray-300 text-gray-900" : "bg-black text-white"
                 }`}
             >
-                <div ref={outputRef} className="flex-grow whitespace-pre overflow-y-auto">
+                <div
+                    ref={outputRef}
+                    className="flex-grow whitespace-pre overflow-y-auto"
+                >
                     {output.map((line, index) => (
                         <div key={index}>{line}</div>
                     ))}
@@ -187,17 +210,20 @@ const Terminal = ({ toggleChart, isChartVisible }) => {
                             className={`w-full outline-none text-xs uppercase caret-transparent bg-transparent ${
                                 isDark ? "text-gray-900" : "text-white"
                             }`}
+                            style={isMobile ? { fontSize: "16px" } : {}}
                         />
-                        <span
-                            className={`absolute top-0 left-0 inline-block w-[0.6em] h-[1em] ${
-                                blink ? "opacity-100" : "opacity-0"
-                            } ${isDark ? "bg-gray-900" : "bg-white"}`}
-                            style={{
-                                transform: `translateX(${
-                                    cursorPosition * 0.6
-                                }em)`,
-                            }}
-                        ></span>
+                        {!isMobile && (
+                            <span
+                                className={`absolute top-0 left-0 inline-block w-[0.6em] h-[1em] ${
+                                    blink ? "opacity-100" : "opacity-0"
+                                } ${isDark ? "bg-gray-900" : "bg-white"}`}
+                                style={{
+                                    transform: `translateX(${
+                                        cursorPosition * 0.6
+                                    }em)`,
+                                }}
+                            ></span>
+                        )}
                     </div>
                 </form>
             </div>
