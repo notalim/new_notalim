@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ProjectItem from "./ProjectItem";
 import ProjectDetails from "./ProjectDetails";
-import LoadingBar from "./LoadingBar";
+import LoadingBar from "../LoadingBar";
+import { useTheme } from '../../contexts/ThemeContext';
 
 const ProjectsComponent = () => {
     const [projects, setProjects] = useState([]);
     const [showArchive, setShowArchive] = useState(false);
+    const { isDark } = useTheme();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -48,7 +50,7 @@ const ProjectsComponent = () => {
         <div className="container mx-auto px-2 mb-30">
             <div className="grid grid-cols-3 gap-4 mt-4">
                 <div className="col-span-2 space-y-4">
-                    <h2 className="text-xs uppercase mb-4 pb-2 font-thin">
+                    <h2 className={`text-xs uppercase mb-4 pb-2 font-thin ${isDark ? 'text-white' : 'text-black'}`}>
                         Projects
                     </h2>
                     {projects.length === 1 ? (
@@ -60,7 +62,7 @@ const ProjectsComponent = () => {
                     )}
                 </div>
                 <div className="col-span-1 space-y-4">
-                    <h2 className="text-xs uppercase mb-4 pb-2 font-thin">
+                    <h2 className={`text-xs uppercase mb-4 pb-2 font-thin ${isDark ? 'text-white' : 'text-black'}`}>
                         Details
                     </h2>
                     {projects.length === 1 ? (
@@ -78,11 +80,11 @@ const ProjectsComponent = () => {
                     <div className="flex items-center space-x-4">
                         <button
                             onClick={() => setShowArchive(!showArchive)}
-                            className="text-lg uppercase font-thin text-black hover:underline transition-colors duration-200"
+                            className={`text-lg uppercase font-thin ${isDark ? 'text-white hover:text-gray-300' : 'text-black hover:underline'} transition-colors duration-200`}
                         >
                             {showArchive ? "Hide Archived Projects" : "Show Archived Projects"}
                         </button>
-                        <span className="text-sm text-gray-400 font-thin">
+                        <span className={`text-sm ${isDark ? 'text-gray-500' : 'text-gray-400'} font-thin`}>
                             ←----- i archive old projects that haven't been worked on for a while
                         </span>
                     </div>

@@ -1,4 +1,7 @@
+import { useTheme } from '../../contexts/ThemeContext';
+
 const ProjectDetails = ({ project }) => {
+    const { isDark } = useTheme();
     const truncateDescription = (text, length = 200) => {
         if (!text) return "";
         return text.length > length ? text.substring(0, length) + "..." : text;
@@ -25,13 +28,13 @@ const ProjectDetails = ({ project }) => {
                         project.technologies.map((tech, index) => (
                             <span
                                 key={index}
-                                className="bg-black text-white text-xxs sm:text-xs uppercase font-thin"
+                                className={`text-xxs sm:text-xs uppercase font-thin ${isDark ? 'text-gray-900 bg-gray-300' : 'text-white bg-black'}`}
                             >
                                 {tech}
                             </span>
                         ))
                     ) : (
-                        <span className="bg-black text-white text-xxs sm:text-xs uppercase font-thin ">
+                        <span className={`text-xxs sm:text-xs uppercase font-thin ${isDark ? 'text-gray-900 bg-gray-300' : 'text-white bg-black'}`}>
                             No technologies
                         </span>
                     )}

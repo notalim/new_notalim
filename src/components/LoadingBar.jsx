@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useTheme } from '../contexts/ThemeContext';
 
 const LoadingBar = () => {
     const [dots, setDots] = useState("");
+    const { isDark } = useTheme();
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -20,7 +22,7 @@ const LoadingBar = () => {
     }, []);
 
     return (
-        <div className="flex items-center justify-center text-sm uppercase font-thin text-gray-500 mt-2">
+        <div className={`flex items-center justify-center text-sm uppercase font-thin ${isDark ? 'text-gray-400' : 'text-gray-500'} mt-2`}>
             Loading{dots}
         </div>
     );

@@ -1,4 +1,7 @@
+import { useTheme } from '../../contexts/ThemeContext';
+
 const ProjectItem = ({ project }) => {
+    const { isDark } = useTheme();
     const getDaysAgo = (date) => {
         const givenDate = new Date(date);
         const now = new Date();

@@ -1,4 +1,7 @@
+import { useTheme } from '../contexts/ThemeContext';
+
 const Footer = () => {
+    const { isDark } = useTheme();
     return (
         <div className="container mx-auto px-2 mt-6 mb-6">
             <div className="text-center">

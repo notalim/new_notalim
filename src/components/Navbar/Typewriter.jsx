@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+
 const Typewriter = ({ phrases }) => {
     const [index, setIndex] = useState(
         Math.floor(Math.random() * phrases.length)

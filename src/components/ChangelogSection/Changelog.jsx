@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import ChangelogItem from "./ChangelogItem";
-import LoadingBar from "./LoadingBar";
+import LoadingBar from "../LoadingBar";
+import { useTheme } from '../../contexts/ThemeContext';
 
 const ChangelogComponent = ({ id }) => {
     const [changelogs, setChangelogs] = useState([]);
+    const { isDark } = useTheme();
 
     useEffect(() => {
         const fetchData = async () => {

@@ -1,3 +1,5 @@
+import { useTheme } from "../../contexts/ThemeContext";
+
 const parseDate = (date) => {
     if (!date) return "";
     // I want it too look YYYY-MM-DD
@@ -27,21 +29,29 @@ const parseCoAuthors = (message) => {
     return coAuthors;
 };
 
-const displayAuthors = (authors) => {
-    
-    return authors.map((author, index) => (
-        <div key={index}>
-            <span className="ml-1 text-xxs bg-black text-white">{author}</span>
-            {index < authors.length - 1 && (
-                <span className="text-xs font-thin text-gray-500 uppercase">
-                    ,
-                </span>
-            )}
-        </div>
-    ));
-};
-
 const ChangelogItem = ({ changelog, index }) => {
+    const { isDark } = useTheme();
+
+    const displayAuthors = (authors) => {
+        return authors.map((author, index) => (
+            <div key={index}>
+                <span
+                    className={`ml-1 text-xxs ${
+                        isDark
+                            ? "bg-gray-300 text-gray-900"
+                            : "bg-black text-white"
+                    }`}
+                >
+                    {author}
+                </span>
+                {index < authors.length - 1 && (
+                    <span className="text-xs font-thin text-gray-500 uppercase">
+                        ,
+                    </span>
+                )}
+            </div>
+        ));
+    };
     const borderTopClass = index === 0 ? "" : "border-t border-gray-200";
     const coAuthors = parseCoAuthors(changelog.message);
 
@@ -54,11 +64,7 @@ const ChangelogItem = ({ changelog, index }) => {
                 {changelog.projectName}
             </div>
             <div className="w-1/4 text-xs font-thin text-gray-500 uppercase sm:w-2/12 flex items-center">
-                By{" "}
-
-
-
-                {displayAuthors([changelog.by].concat(coAuthors))}
+                By {displayAuthors([changelog.by].concat(coAuthors))}
             </div>
             <div className="w-1/4 text-xxs font-thin text-gray-500 uppercase sm:w-2/12">
                 @{" "}

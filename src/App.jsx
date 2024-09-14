@@ -1,19 +1,23 @@
 import React from "react";
 import "./App.css";
-
-import Navbar from "./components/Navbar";
-import Projects from "./components/Projects";
-import Changelog from "./components/Changelog";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import Navbar from "./components/Navbar/Navbar";
+import Projects from "./components/ProjectsSection/Projects";
+import Changelog from "./components/ChangelogSection/Changelog";
 import Footer from "./components/Footer";
+import PieChartSection from "./components/PieChartSection/PieChartSection";
 
 function App() {
     return (
-        <div className="App">
-            <Navbar />
-            <Projects />
-            <Changelog id="changelogSection" />
-            <Footer />
-        </div>
+        <ThemeProvider>
+            <div className="App">
+                <Navbar />
+                <PieChartSection />
+                <Projects />
+                <Changelog id="changelogSection" />
+                <Footer />
+            </div>
+        </ThemeProvider>
     );
 }
 
