@@ -20,7 +20,7 @@ const Terminal = ({ toggleChart, isChartVisible }) => {
 |_| |_|\\___/ \\__\\__,_|_|_|_| |_| |_|
                                     
                                     `;
-        const separator = "_".repeat(60);
+        const separator = "-".repeat(60);
         setOutput([
             asciiArt,
             separator,
@@ -154,7 +154,7 @@ const Terminal = ({ toggleChart, isChartVisible }) => {
     };
 
     return (
-        <div className={`h-full`}>
+        <div className="w-full h-full">
             <div
                 className={`bg-gray-400 p-1 ${
                     isDark ? "text-gray-800" : "text-white"

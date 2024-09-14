@@ -26,22 +26,22 @@ const PieChartSection = () => {
     return (
         <section className="py-8 px-2 bg-background text-black">
             <div className="container mx-auto">
-                <div className="flex space-x-8 items-start h-96">
-                    <div className="w-3/5 h-full"> 
+                <div className="flex flex-col md:flex-row md:space-x-8">
+                    <div className="w-full md:w-3/5 h-96"> 
                         <Terminal toggleChart={toggleChart} isChartVisible={isChartVisible} />
                     </div>
-                    <div className="w-2/5 h-full flex items-center justify-center">
-                        {isChartVisible ? (
-                            <div className="flex items-center">
-                                <div className="w-64 h-64 mr-4">
+                    {isChartVisible && (
+                        <div className="w-full md:w-2/5 mt-4 md:mt-0 flex items-center">
+                            <div className="flex flex-row items-center justify-center w-full">
+                                <div className="w-1/2 h-64">
                                     <PieChart data={skillsData} />
                                 </div>
-                                <ChartLabels data={skillsData} />
+                                <div className="w-1/2 pl-4">
+                                    <ChartLabels data={skillsData} />
+                                </div>
                             </div>
-                        ) : (
-                            <div className="w-full h-full" />
-                        )}
-                    </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </section>
