@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTheme } from "../../contexts/ThemeContext";
 
-const Terminal = ({ toggleChart, isChartVisible }) => {
+const Terminal = ({ toggleChart, isChartVisible, scrollToSection }) => {
     const [input, setInput] = useState("");
     const [output, setOutput] = useState([]);
     const [blink, setBlink] = useState(true);
@@ -16,13 +16,13 @@ const Terminal = ({ toggleChart, isChartVisible }) => {
             setIsMobile(window.innerWidth <= 768); // Adjust this breakpoint as needed
         };
         checkMobile();
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
     }, []);
 
     useEffect(() => {
         const blinkInterval = setInterval(() => {
-            setBlink(prev => !prev);
+            setBlink((prev) => !prev);
         }, 500);
         return () => clearInterval(blinkInterval);
     }, []);
@@ -33,7 +33,7 @@ const Terminal = ({ toggleChart, isChartVisible }) => {
             | |      | (_)          
  _ __   ___ | |_ __ _| |_ _ __ ___  
 | '_ \\ / _ \\| __/ _\` | | | '_ \` _ \\ 
-| | | | (_) | || (_| | | | | | | |
+| | | | (_) | || (_| | | | | | | | \\
 |_| |_|\\___/ \\__\\__,_|_|_|_| |_| |_|
                                     
                                     `;
@@ -114,15 +114,13 @@ const Terminal = ({ toggleChart, isChartVisible }) => {
                 setOutput((prev) => [...prev, "OPENING EMAIL CLIENT"]);
                 break;
             case "projects":
-                document
-                    .getElementById("projectsSection")
-                    .scrollIntoView({ behavior: "smooth" });
+                //console.log("Scrolling to projects section");
+                scrollToSection("projectsSection");
                 setOutput((prev) => [...prev, "SCROLLING TO PROJECTS SECTION"]);
                 break;
             case "changelog":
-                document
-                    .getElementById("changelogSection")
-                    .scrollIntoView({ behavior: "smooth" });
+                // console.log("Scrolling to changelog section");
+                scrollToSection("changelogsSection");
                 setOutput((prev) => [
                     ...prev,
                     "SCROLLING TO CHANGELOG SECTION",

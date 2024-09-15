@@ -1,22 +1,25 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Navbar from "./components/Navbar/Navbar";
-import Projects from "./components/ProjectsSection/Projects";
-import Changelog from "./components/ChangelogSection/Changelog";
-import Footer from "./components/Footer";
-import PieChartSection from "./components/PieChartSection/PieChartSection";
+import Navbar from "./layouts/Navbar/Navbar";
+import Footer from "./layouts/Footer";
+import Home from "./pages/Home";
+import Library from "./pages/Library/Library";
 
 function App() {
     return (
         <ThemeProvider>
-            <div className="App">
-                <Navbar />
-                <PieChartSection />
-                <Projects />
-                <Changelog id="changelogSection" />
-                <Footer />
-            </div>
+            <Router>
+                <div className="App">
+                    <Navbar />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/lib" element={<Library />} />
+                    </Routes>
+                    <Footer />
+                </div>
+            </Router>
         </ThemeProvider>
     );
 }

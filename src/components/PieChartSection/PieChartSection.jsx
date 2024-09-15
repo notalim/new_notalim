@@ -4,7 +4,7 @@ import ChartLabels from "./ChartLabels";
 import Terminal from "./Terminal";
 import { useTheme } from '../../contexts/ThemeContext';
 
-const PieChartSection = () => {
+const PieChartSection = ({ scrollToSection }) => {
     const { isDark } = useTheme();
     const [isChartVisible, setIsChartVisible] = useState(false);
     const skillsData = [
@@ -28,7 +28,7 @@ const PieChartSection = () => {
             <div className="container mx-auto">
                 <div className="flex flex-col md:flex-row md:space-x-8">
                     <div className="w-full md:w-3/5 h-96"> 
-                        <Terminal toggleChart={toggleChart} isChartVisible={isChartVisible} />
+                        <Terminal toggleChart={toggleChart} isChartVisible={isChartVisible} scrollToSection={scrollToSection} />
                     </div>
                     {isChartVisible && (
                         <div className="w-full md:w-2/5 mt-4 md:mt-0 flex items-center">

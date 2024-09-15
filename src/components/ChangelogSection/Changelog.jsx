@@ -3,7 +3,7 @@ import ChangelogItem from "./ChangelogItem";
 import LoadingBar from "../LoadingBar";
 import { useTheme } from '../../contexts/ThemeContext';
 
-const ChangelogComponent = ({ id }) => {
+const ChangelogComponent = () => {
     const [changelogs, setChangelogs] = useState([]);
     const { isDark } = useTheme();
 
@@ -36,7 +36,7 @@ const ChangelogComponent = ({ id }) => {
     );
 
     return (
-        <div id={id} className="container mx-auto mt-10 changelog-container">
+        <div id="changelogsSection" className="container mx-auto mt-10 changelog-container">
             <h2 className="text-xs uppercase font-thin py-2 border-b text-white bg-black">
                 Changelog
             </h2>

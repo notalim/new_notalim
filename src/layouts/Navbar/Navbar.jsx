@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useTheme } from '../../contexts/ThemeContext';
 import ScrollingBadges from "./ScrollingBadges";
 import badges from "../../assets/badges.json";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,15 +21,34 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className={`sticky top-0 z-10 ${isDark ? 'bg-gray-300' : 'bg-black'} text-inverse-text border-primary-text`}>
+            <nav
+                className={`sticky top-0 z-10 ${
+                    isDark ? "bg-gray-300" : "bg-black"
+                } text-inverse-text border-primary-text`}
+            >
                 <div className="flex justify-between items-center p-4">
-                    <div className="flex items-center space-x-2">
-                        <img
-                            src="/favicon.ico"
-                            alt="notalim"
-                            className="w-6 h-6"
-                        />
-                        <div className="text-md font-light">notalim</div>
+                    <div className="flex items-center">
+                        <div className="flex items-center space-x-2">
+                            <Link 
+                                to="/"
+                                className="flex items-center space-x-2 cursor-pointer"
+                            >
+                                <img
+                                    src="/favicon.ico"
+                                    alt="notalim"
+                                    className="w-6 h-6"
+                                />
+                                <div className="text-md font-light">
+                                    notalim
+                                </div>
+                            </Link>
+                        </div>
+                        <Link
+                            to="/lib"
+                            className="text-sm uppercase ml-12 font-light hover:underline"
+                        >
+                            View My Components
+                        </Link>
                     </div>
 
                     {/* <div className="hidden md:block flex-grow text-center">
@@ -109,7 +129,9 @@ const Navbar = () => {
                     </div>
                 )}
             </nav>
-            <div className={`bg-primary text-primary-text border-b border-inverse overflow-hidden py-2`}>
+            <div
+                className={`bg-primary text-primary-text border-b border-inverse overflow-hidden py-2`}
+            >
                 <ScrollingBadges badges={badges} />
             </div>
         </>

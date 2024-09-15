@@ -47,7 +47,7 @@ const ProjectsComponent = () => {
     });
 
     return (
-        <div className="container mx-auto px-2 mb-30">
+        <div id="projectsSection" className="container mx-auto px-2 mb-30">
             <div className="grid grid-cols-3 gap-4 mt-4">
                 <div className="col-span-2 space-y-4">
                     <h2 className={`text-xs uppercase mb-4 pb-2 font-thin ${isDark ? 'text-white' : 'text-black'}`}>
