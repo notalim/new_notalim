@@ -8,8 +8,8 @@ const ToggleSwitchCard: React.FC = () => {
     return (
         <ComponentCard
             title="Toggle Switch"
-            description="A simple toggle switch with customizable icons"
-            githubLink="https://github.com/yourusername/yourrepo/blob/main/src/components/MyComponents/ToggleSwitch/ToggleSwitch.tsx"
+            description="good night!"
+            githubLink="https://github.com/notalim/new_notalim/tree/main/src/components/MyComponents/ToggleSwitch/ToggleSwitch.tsx"
         >
             <div className="flex items-center justify-center w-full h-full">
                 <ToggleSwitch isOn={isDark} onToggle={toggleTheme} />

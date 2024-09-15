@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTheme } from "../../contexts/ThemeContext";
+import { useNavigate } from "react-router-dom";
 
 const Terminal = ({ toggleChart, isChartVisible, scrollToSection }) => {
     const [input, setInput] = useState("");
@@ -10,7 +11,8 @@ const Terminal = ({ toggleChart, isChartVisible, scrollToSection }) => {
     const { isDark, toggleTheme } = useTheme();
     const inputRef = useRef(null);
     const outputRef = useRef(null);
-
+    const navigate = useNavigate();
+    
     useEffect(() => {
         const checkMobile = () => {
             setIsMobile(window.innerWidth <= 768); // Adjust this breakpoint as needed
@@ -125,6 +127,9 @@ const Terminal = ({ toggleChart, isChartVisible, scrollToSection }) => {
                     ...prev,
                     "SCROLLING TO CHANGELOG SECTION",
                 ]);
+                break;
+            case "lib" || "library":
+                navigate("/lib");
                 break;
             case "ls":
             case "cd":

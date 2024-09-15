@@ -27,7 +27,7 @@ const DotPatternCard: React.FC = () => {
         <ComponentCard
             title="Dot Pattern"
             description="dot dot dot..."
-            githubLink="https://github.com/yourusername/yourrepo/blob/main/src/components/MyComponents/DotPattern/DotPattern.tsx"
+            githubLink="https://github.com/notalim/new_notalim/tree/main/src/components/MyComponents/DotPattern/DotPattern.tsx"
             buttons={[{ label: "PATTERN", onClick: changeDotPattern }]}
             rounded={false}
         >

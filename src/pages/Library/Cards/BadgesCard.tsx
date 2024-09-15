@@ -27,16 +27,14 @@ const BadgesCard: React.FC = () => {
         <ComponentCard
             title="BADGES"
             description="i actually like them having no paddings"
-            githubLink="https://github.com/yourusername/yourrepo/blob/main/src/components/MyComponents/ScrollingBadges/ScrollingBadges.tsx"
+            githubLink="https://github.com/notalim/new_notalim/tree/main/src/components/MyComponents/Badge/Badge.tsx"
             buttons={[
                 {
                     label: isScrolling ? "STOP SCROLLING" : "SCROLL",
                     onClick: () => setIsScrolling(!isScrolling),
-                    
                 },
             ]}
         >
-
             <ScrollingBadges
                 badges={scrollingBadges}
                 isScrolling={isScrolling}

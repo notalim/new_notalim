@@ -23,7 +23,7 @@ const TypewriterCard: React.FC = () => {
         <ComponentCard
             title="Typewriter"
             description="and an input!"
-            githubLink="https://github.com/yourusername/yourrepo/blob/main/src/components/MyComponents/Typewriter/Typewriter.tsx"
+            githubLink="https://github.com/notalim/new_notalim/tree/main/src/components/MyComponents/Input/Typewriter.tsx"
             input={<CustomInput onSubmit={addPhrase} placeholder="Add a new phrase..." darkMode={isDark}
             value={input}
             onChange={(e: any) => setInput(e.target.value)}

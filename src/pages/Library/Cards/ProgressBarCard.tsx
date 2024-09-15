@@ -35,10 +35,10 @@ const ProgressBarCard: React.FC = () => {
   return (
     <ComponentCard
       title="Progress Bar"
-      description="A simple, customizable progress bar"
-      githubLink="https://github.com/yourusername/yourrepo/blob/main/src/components/MyComponents/ProgressBar/ProgressBar.tsx"
-      buttons={[
-        {
+            description="A simple, customizable progress bar"
+            githubLink="https://github.com/notalim/new_notalim/tree/main/src/components/MyComponents/ProgressBar/ProgressBar.tsx"
+            buttons={[
+                {
           label: showPercentage ? 'HIDE %' : 'SHOW %',
           onClick: () => setShowPercentage(!showPercentage),
         },

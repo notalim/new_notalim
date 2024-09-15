@@ -28,7 +28,7 @@ const DateCard: React.FC = () => {
         <ComponentCard
             title="Date"
             description="what time is it?"
-            githubLink="https://github.com/yourusername/yourrepo/blob/main/src/components/MyComponents/Date/Date.tsx"
+            githubLink="https://github.com/notalim/new_notalim/tree/main/src/components/MyComponents/Date/Date.tsx"
             buttons={formats.map((f) => ({
                 label: f.toUpperCase(), // Optional: Display in uppercase
                 onClick: () => setFormat(f),
