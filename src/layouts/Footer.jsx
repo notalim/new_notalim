@@ -5,6 +5,25 @@ const Footer = () => {
     return (
         <div className="container mx-auto px-2 mt-6 mb-6">
             <div className="text-center">
+                <div class="webring" className="text-gray-800 space-x-4">
+                    <a
+                        className="hover:text-gray-800 text-xxs uppercase text-gray-500"
+                        href="https://pg-webring.vercel.app/prev?site=notalim.com"
+                    >
+                        prev
+                    </a>
+                    <a
+                        href="https://pg-webring.vercel.app"
+                        className="text-gray-900 text-md underline"
+                    >
+                        pixl garden webring
+                    </a>
+                    <a
+                        className="hover:text-gray-800 text-xxs uppercase text-gray-500"
+                        href="https://pg-webring.vercel.app/next?site=notalim.com"
+                    >
+                        next
+                </div>
                 <a
                     href="https://github.com/notalim"
                     className="text-gray-600 hover:text-gray-800 font-thin uppercase text-xs"

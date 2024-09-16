@@ -32,10 +32,9 @@ const Library: React.FC = () => {
                     <BadgesCard />
                     <TypewriterCard />
                     <DateCard />
+                    <P5SketchCard />
                     <ProgressBarCard />
                     <ToggleSwitchCard />
-
-                    <P5SketchCard />
 
                     {/* Add more ComponentCards here as you create more components */}
                 </div>
