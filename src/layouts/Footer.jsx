@@ -23,6 +23,7 @@ const Footer = () => {
                         href="https://pg-webring.vercel.app/next?site=notalim.com"
                     >
                         next
+                    </a>
                 </div>
                 <a
                     href="https://github.com/notalim"
