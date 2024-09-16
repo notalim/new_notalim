@@ -86,7 +86,7 @@ const Terminal = ({ toggleChart, isChartVisible, scrollToSection }) => {
             case "help":
                 setOutput((prev) => [
                     ...prev,
-                    "AVAILABLE COMMANDS: HELP, CLEAR, CHART, RESUME, LINKEDIN, GITHUB, EMAIL, PROJECTS, CHANGELOG",
+                    "AVAILABLE COMMANDS: HELP, LIB, THEME,CLEAR, CHART, RESUME, LINKEDIN, GITHUB, EMAIL, PROJECTS, CHANGELOG, COFFEE",
                 ]);
                 break;
             case "clear":

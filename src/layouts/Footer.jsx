@@ -14,7 +14,7 @@ const Footer = () => {
                     </a>
                     <a
                         href="https://pg-webring.vercel.app"
-                        className="text-gray-900 text-md underline"
+                        className={`${isDark ? "text-gray-300" : "text-gray-900"} text-md underline`}
                     >
                         pixl garden webring
                     </a>
@@ -34,7 +34,7 @@ const Footer = () => {
                     Visit my GitHub
                 </a>
 
-                <p className="text-gray-500 text-xxs">
+                <p className="text-gray-500 text-xxs mt-4">
                     Inspired by{" "}
                     <a
                         className="hover:text-gray-800"
