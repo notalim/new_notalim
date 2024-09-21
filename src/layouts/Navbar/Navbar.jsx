@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTheme } from '../../contexts/ThemeContext';
 import ScrollingBadges from "./ScrollingBadges";
+import ScreenDimensions from "./ScreenDimensions";
 import badges from "../../assets/badges.json";
 import { Link } from 'react-router-dom';
 
@@ -29,7 +30,7 @@ const Navbar = () => {
                 <div className="flex justify-between items-center p-4">
                     <div className="flex items-center">
                         <div className="flex items-center space-x-2">
-                            <Link 
+                            <Link
                                 to="/"
                                 className="flex items-center space-x-2 cursor-pointer"
                             >
@@ -41,19 +42,12 @@ const Navbar = () => {
                                 <div className="text-md font-light">
                                     notalim
                                 </div>
+                                <div className="justify-end text-gray-400">
+                                    <ScreenDimensions />
+                                </div>
                             </Link>
                         </div>
-                        <Link
-                            to="/lib"
-                            className="text-sm uppercase ml-12 font-light hover:underline"
-                        >
-                            View My Components
-                        </Link>
                     </div>
-
-                    {/* <div className="hidden md:block flex-grow text-center">
-                        <Typewriter phrases={phrases} />
-                    </div> */}
 
                     <div className="md:hidden">
                         <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -75,6 +69,12 @@ const Navbar = () => {
                     </div>
 
                     <ul className="hidden md:flex space-x-4">
+                        <Link
+                            to="/lib"
+                            className="text-xs sm:text-sm uppercase ml-12 font-light hover:underline"
+                        >
+                            View My Components
+                        </Link>
                         <a
                             href="/notalim_resume.pdf"
                             target="_blank"
@@ -101,6 +101,12 @@ const Navbar = () => {
                 {isMenuOpen && (
                     <div className="md:hidden">
                         <ul className="flex flex-col items-center space-y-2 py-2">
+                            <Link
+                                to="/lib"
+                                className="uppercase font-light hover:underline"
+                            >
+                                View My Components
+                            </Link>
                             <a
                                 href="/notalim_resume.pdf"
                                 target="_blank"
